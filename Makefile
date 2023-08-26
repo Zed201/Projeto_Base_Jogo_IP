@@ -1,27 +1,22 @@
-### Se for trocar o nome do arquivo princial so troca o nome dele aqui, no caso troca index por main...
-### Make para usar o raylib, para instalar a raylib usa o comando "make ray-init", depois so executar make direto que ele sempre vai compilar(na pasta) e exeuctar
+# Se for trocar o nome do arquivo princial so troca o nome dele aqui, no caso troca index por main...
 Bin=index
-all:
-	echo "Executando Build"
-	mkdir Build
-	gcc $(Bin).c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o ./Build/$(Bin)
-	./Build/$(Bin)
+
+# Make apenas para facilitar o build dos .c com raylib, so digitar make para dar build, pasta com nome build, e executar
+# make rm, vai remover a pasta e o arquivo excutavel
+# make ex vai apenas executar o arquivo
+# Ele apenas vai executar se tiver o .c
+all: $(Bin).c
+	@echo "Executando Build"
+	mkdir -p Build
+	gcc $(Bin).c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o ./Build/$(Bin).o
+	./Build/$(Bin).o
 	clear
-ray-init:
-### Lembrar de ter o proprio make antes e o git
-	sudo apt install cmake make git libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
-	git clone https://github.com/raysan5/raylib
-	cd raylib
-	mkdir build && cd build
-	cmake -DBUILD_SHARED_LIBS=ON ..
-	make
-	sudo make install
-	sudo cp /usr/local/lib/libraylib.so.450 /usr/lib/ 
-	../.. && rm -rf raylib;
-	echo "Instalacao Concluida"
-remove:
+# Se nao tiver o executavel ele nao chama a funcao
+rm: ./Build/$(Bin).o
 	rm -rf Build
-	clear
-Executar:
-	./Build/$(Bin)
+	@echo "Pastas de Build removidas"
+# Se nao tiver o executavel ele nao chama a funcao
+ex: ./Build/$(Bin).o
+	@echo "Executando arquivo"
+	./Build/$(Bin).o
 	clear

@@ -1,3 +1,5 @@
+// Exemplo basico de raylib, se der tudo certo com o comando make ele vai abrir uma janela com o exemplo
+// Caso o nome desse arquivo mude ele, deve-se mudar a linha indicada no arquivo de nome Makefile
 #include "raylib.h"
 #include "raymath.h"
 
