@@ -2,7 +2,7 @@
 Basicamente esse repositório serve para ensinar a instalar a biblioteca raylib no wsl do windows, fazendo assim ficar mais fácil usar a lib, sem precisar ficar programando no notepad++. 
 Primeiro teremos os passos de instalar o wsl no win10/11 e depois os passos serão dentro do terminal do Ubuntu.
 ## Instalando e configurando o WSL
-Basicamente para instalar o terminal teremos apenas que colocar o comando `wsl --install` no terminal, esse comando irá instalar o wsl, que em resumo é uma maquina virtual que irá rodar uma distro linux dentro do sistema windows, mas informações só clicar [aqui](https://learn.microsoft.com/pt-br/windows/wsl/install).
+Basicamente para instalar o terminal linux, teremos apenas que colocar o comando `wsl --install` no terminal, esse comando irá instalar o wsl, que em resumo é uma maquina virtual que irá rodar uma distro linux dentro do sistema windows, mas informações só clicar [aqui](https://learn.microsoft.com/pt-br/windows/wsl/install).
 Com o wsl instalado temos de especificar a distro a ser instalada, no caso o Ubuntu, para isso usamos simplesmente o comando `wsl --install Ubuntu-22.04`,  isso irá instalar a distro e irá pedir algumas informações como nome de user e senha, esse será o usuário que você usará no terminal.
 Para ver quais outras distros podem ser instaladas é só usar o comando `wsl -l -o` e executar o comando acima só indicando o nome da distro a ser instalada, mais informações [aqui](https://learn.microsoft.com/pt-br/windows/wsl/basic-commands).
 Com o Ubuntu instalado no wsl, se você estiver usando apenas o prompt/powershell para acessar ele é só digitar o comando `wsl` que o terminal irá trocar e ficar semelhante ao da distro escolhida, mas usando o aplicativo Terminal do windows mesmo, que agrupa todos os terminais da maquina, a distro escolhida irá aparecer aqui, como uma opção de janela:
@@ -22,11 +22,11 @@ sudo apt install build-essential git wget
 ##### (por ser um comando que usa sudo ele irá pedir a senha do seu user no Ubuntu).
 Com o git instalado é só você clonar esse repo, com o comando:
 ```
-git clone https://github.com/Zed201/Projeto_Base_Jogo_IP.git`
+git clone https://github.com/Zed201/Projeto_Base_Jogo_IP.git
 ```
  Depois disso você entra na pasta, com o cd normalmente e pode abrir o vscode, usando o comando `code .` no terminal, mas basicamente você tem que, dentro da pasta clonada, digitar o comando `. ./inst.sh` , isso irá iniciar um script que irá instalar tudo oque for preciso, só precisa ser feito uma vez na maquina(no caso por distro).
 Uma vez isso feito pode abrir o vscode nessa pasta e executar o comando `make` e se tudo tiver certo ele irá compilar o código e mostrar um exemplo do uso da raylib.
 ## Um pouco mais
-O arquivo "Makefile" desse repositório servirá para facilitar os comandos de compilação dos códigos que usam rayib, recomendo até dar uma olhada, basicamente usar o comando `make` fará o código ser compilado, sendo colocado numa pasta chamada Build, e executado; O comando `make rm` irá excluir essa pasta e o comando `make ex` irá apenas executar o codigo já compilado.
+O arquivo "Makefile" desse repositório servirá para facilitar os comandos de compilação dos códigos que usam raylib, recomendo até dar uma olhada, basicamente usar o comando `make` fará o código ser compilado, sendo colocado numa pasta chamada Build, e executado; O comando `make rm` irá excluir essa pasta e o comando `make ex` irá apenas executar o codigo já compilado.
 Os outros arquivos desse repo basicamente são um gitignore básico, quem sabe mexer com git sabe oque ele faz, o index.c que é o codigo de exemplo a ser compilado(inclusive se for mudar o nome de arquivo deve editar o "Makefile" para ele compilar o arquivo certo), esse readme.md e as suas imagens o script .sh que pode ser excluído uma vez que já foi usado.
 
