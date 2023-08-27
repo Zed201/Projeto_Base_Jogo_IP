@@ -9,5 +9,6 @@ mkdir build && cd build
 cmake -DBUILD_SHARED_LIBS=ON ..
 make
 sudo make install
+udo cp /usr/local/lib/libraylib.so.450 /usr/lib/libraylib.so.450
 cd ../.. && rm -rf raylib;
 echo "Instalacao Concluida"
