@@ -9,13 +9,15 @@ Com o Ubuntu instalado no wsl, se você estiver usando apenas o prompt/powershel
 ![Aplicativo Terminal1](./imgs/Terminal1.png)
 ![Aplicativo Terminal2](./imgs/Terminal2.png)
 Só clicar no terminal escolhido(no caso da imagem temos instalado o Debian e o Ubuntu) e ele irá abrir uma janela do terminal com o respectivo.
-O wsl está instalado mas ele por si só não poderá suportar uma interface gráfica, indispensável para ver como está o jogo desenvolvido em raylib, para usar interfaces gráficas no wsl a microsoft disponibiliza drivers que quando instalados permitem abrir aplicativos de linux no windows pelo wsl, esses drives podem ser encontrados [aqui](https://learn.microsoft.com/pt-br/windows/wsl/tutorials/gui-apps), só devendo se atentar qual a versão irá ser instalada e depois de baixar só clicar para executar que ele será instalado.
+O wsl está instalado mas ele por si só não poderá suportar uma interface gráfica, indispensável para ver como está o jogo desenvolvido em raylib, para usar interfaces gráficas no wsl a microsoft disponibiliza drivers que quando instalados permitem abrir aplicativos de linux no windows pelo wsl, esses drives podem ser encontrados [aqui](https://learn.microsoft.com/pt-br/windows/wsl/tutorials/gui-apps), ,só seguir esse tutorial que vai funcionar.
+Em alguns casos não se precisa instalar os drivers só colocar o comando `wsl  --update` oque vai atualizar o wsl e depois `wsl --shutdown` para reiniciar o wsl.
 Com o drives instalado podemos partir para configurar as coisas no ubuntu e de cara recomendo a quem não é familiarizado com o uso do terminal pesquisar e estudar mais sobre, mas [aqui](https://www.hostinger.com.br/tutoriais/comandos-linux) você irá encontrar um geral dos principais comandos, todos obviamente podem ser executados no terminal com wsl.
 Além de tudo isso é importante configurar o Visual Studio Code para usar dentro da distro instalada pelo wsl, isso é simples, apenas instalamos a extensão de nome WSL, da própria Microsoft, ela fara a conexão quando inicializarmos o vs no terminal do Ubuntu.
 ![Extensão do Vscode](./imgs/wsl-extensao.png)
 ## O Ubuntu(Mesmo para quem não irá usar WSL)
 Aqui será explicado como "instalar" a biblioteca raylib, oque não é mais difícil doque instalar o WSL, mas é importante ter algum conhecimento de git e comandos de terminal, já que não se tem uma interface gráfica certinha para ir se guiando; Todos os comendos basicamente foram automatizados por esse repo, mas eles podem ser achados [aqui](https://terminalroot.com.br/2022/11/crie-jogos-para-windows-linux-e-web-com-raylib-c-cpp.html).
-Primeiro precisamos instalar 3 coisas no Ubuntu, o git, um pacote com ferramentas "essenciais" para programação e uma forma de se conectar com o vscode, isso pode ser feito pelo comando:
+Antes de tudo precisamos atualizar o sistema usando o comando `sudo apt update && sudo apt upgrade`.
+Depois disso precisamos instalar 3 coisas no Ubuntu, o git, um pacote com ferramentas "essenciais" para programação e uma forma de se conectar com o vscode, isso pode ser feito pelo comando:
 ```
 sudo apt install build-essential git wget
 ```
