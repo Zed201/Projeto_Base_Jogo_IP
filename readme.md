@@ -15,9 +15,9 @@ Além de tudo isso é importante configurar o Visual Studio Code para usar dentr
 ![Extensão do Vscode](./imgs/wsl-extensao.png)
 ## O Ubuntu(Mesmo para quem não irá usar WSL)
 Aqui será explicado como "instalar" a biblioteca raylib, oque não é mais difícil doque instalar o WSL, mas é importante ter algum conhecimento de git e comandos de terminal, já que não se tem uma interface gráfica certinha para ir se guiando; Todos os comendos basicamente foram automatizados por esse repo, mas eles podem ser achados [aqui](https://terminalroot.com.br/2022/11/crie-jogos-para-windows-linux-e-web-com-raylib-c-cpp.html).
-Primeiro precisamos instalar 2 coisas no Ubuntu, o git é um pacote com ferramentas "essenciais" para programação, isso pode ser feito pelo comando ]
+Primeiro precisamos instalar 3 coisas no Ubuntu, o git, um pacote com ferramentas "essenciais" para programação e uma forma de se conectar com o vscode, isso pode ser feito pelo comando:
 ```
-sudo apt install build-essential git
+sudo apt install build-essential git wget
 ```
 ##### (por ser um comando que usa sudo ele irá pedir a senha do seu user no Ubuntu).
 Com o git instalado é só você clonar esse repo, com o comando:
